@@ -1,8 +1,8 @@
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
-function BlogCard({id, title = "Default Title", text = "Lorem", image = "https://placehold.co/600x400" }) {
+function BlogCard({id, title = "Default Title", text = "Lorem", image = "https://placehold.co/600x400", click }) {
+
     return (
         <Col xs={12} sm={12} md={12} lg={6} xl={4}>
             <Card className="blog-card">
@@ -12,7 +12,7 @@ function BlogCard({id, title = "Default Title", text = "Lorem", image = "https:/
                     <Card.Text>
                         {text}
                     </Card.Text>
-                    <Button variant="primary">Delete</Button>
+                    <button className="btn btn-primary" onClick={click}>Delete</button>
                 </Card.Body>
             </Card>
         </Col>
