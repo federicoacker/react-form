@@ -1,6 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
+// Bootstrap icons
+import 'bootstrap-icons/font/bootstrap-icons.min.css';
 // Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css'
 // Bootstrap JS
@@ -13,6 +15,6 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <App/>
   </StrictMode>,
 )

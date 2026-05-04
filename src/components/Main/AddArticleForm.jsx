@@ -1,16 +1,7 @@
 import { useState } from "react";
 
-const templateArticle =
-{
-    id: crypto.randomUUID(),
-    title: "",
-    text: "",
-    image: null
-}
-
-
-function AddArticleForm({ articleList, setStateArticleList }) {
-    const [newArticle, setNewArticle] = useState(templateArticle);
+function AddArticleForm({ articleList, setStateArticleList, newArticle, templateArticle, setNewArticle }) {
+    
     const [inputKey, setInputKey] = useState(-1);
 
     const resetInput = () => {
