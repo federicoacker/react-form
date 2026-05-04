@@ -11,9 +11,9 @@ function Main() {
         <main className="bg-dark-subtle">
             <Container className="py-5">
                 <Row className="g-3 align-items-stretch my-3">
-                    <BlogCardList articleList={stateArticleList} setter={setStateArticleList}/>
+                    <BlogCardList articleList={stateArticleList} setStateArticleList={setStateArticleList}/>
                 </Row>
-                <AddArticleForm articleList={stateArticleList} setter={setStateArticleList}/>
+                <AddArticleForm articleList={stateArticleList} setStateArticleList={setStateArticleList}/>
             </Container>
         </main>
     )

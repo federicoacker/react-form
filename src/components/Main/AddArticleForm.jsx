@@ -9,7 +9,7 @@ const templateArticle =
 }
 
 
-function AddArticleForm({ articleList, setter }) {
+function AddArticleForm({ articleList, setStateArticleList }) {
     const [newArticle, setNewArticle] = useState(templateArticle);
     const [inputKey, setInputKey] = useState(-1);
 
@@ -27,15 +27,13 @@ function AddArticleForm({ articleList, setter }) {
             if (filesArray.length === 1) {
                 submitValue = URL.createObjectURL(filesArray[0]);
             }
-            else {
-                submitValue = null;
-            }
         }
-
+        
         const modifiedArticle = {
             ...newArticle,
             id: crypto.randomUUID(),
             [inputField.name]: submitValue
+
         }
 
         setNewArticle(modifiedArticle);
@@ -44,12 +42,25 @@ function AddArticleForm({ articleList, setter }) {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        const newArticleList = [
-            ...articleList,
-            newArticle
-        ]
-        setter(newArticleList);
+        let newArticleList;
+        if (!newArticle.image){
+            newArticleList = [
+                ...articleList,
+                {
+                    ...newArticle,
+                    image: "https://placehold.co/600x400"
+                }
+            ]
+        }
+        else {
+            newArticleList = [
+                ...articleList,
+                newArticle
+            ]
+        }
+        setStateArticleList(newArticleList);
         setNewArticle(templateArticle);
+        resetInput();
     }
 
     return (
@@ -61,7 +72,7 @@ function AddArticleForm({ articleList, setter }) {
                 <textarea className="form-control" onChange={changeHandler} value={newArticle.text} name="text" required />
                 <label htmlFor="image">Immagine associata (opzionale)</label>
                 <input key={inputKey} className="form-control" type="file" onChange={changeHandler} name="image" />
-                <button className="btn btn-primary" type="submit" onClick={resetInput}>Crea nuovo articolo!</button>
+                <button className="btn btn-primary" type="submit">Crea nuovo articolo!</button>
                 <img className="img-fluid" src={newArticle.image} />
             </form>
     )

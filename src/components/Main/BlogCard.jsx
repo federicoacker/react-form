@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 
-function BlogCard({title = "Default Title", text = "Lorem", image = "https://placehold.co/600x400", click }) {
+function BlogCard({title = "Default Title", text = "Lorem", image = "https://placehold.co/600x400", deleteFunction }) {
 
     return (
         <Col xs={12} sm={12} md={12} lg={6} xl={4}>
@@ -12,7 +12,7 @@ function BlogCard({title = "Default Title", text = "Lorem", image = "https://pla
                     <Card.Text className="flex-grow-1 my-card-text">
                         {text}
                     </Card.Text>
-                    <button className="btn btn-primary" onClick={click}>Delete</button>
+                    <button className="btn btn-primary" onClick={deleteFunction}>Delete</button>
                 </Card.Body>
             </Card>
         </Col>

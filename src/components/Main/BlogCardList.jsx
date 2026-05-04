@@ -1,7 +1,7 @@
 import BlogCard from "./BlogCard"
 
 
-function BlogCardList({ articleList, setter }) {
+function BlogCardList({ articleList, setStateArticleList }) {
     return (
         <>
             {
@@ -13,10 +13,10 @@ function BlogCardList({ articleList, setter }) {
                         title={article.title}
                         text={article.text}
                         image={article.image}
-                        click={() => {
+                        deleteFunction={() => {
                             console.log("click", cardId);
                             const newArray = articleList.filter(article => article.id !== cardId);
-                            setter(newArray);
+                            setStateArticleList(newArray);
                         }}/>
                 })
             }
