@@ -12,7 +12,7 @@ function BlogCard({title = "Default Title", text = "Lorem", image = "https://pla
                     <Card.Text className="flex-grow-1 my-card-text">
                         {text}
                     </Card.Text>
-                    <button className="btn btn-primary" onClick={deleteFunction}>Delete</button>
+                    <button className="btn btn-danger" onClick={deleteFunction}><i class="bi bi-trash"></i></button>
                 </Card.Body>
             </Card>
         </Col>
