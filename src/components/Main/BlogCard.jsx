@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 
-function BlogCard({id, articleList, title = "Default Title", text = "Lorem", image = "https://placehold.co/600x400", deleteFunction, setStateArticleList, newArticle, templateArticle, setNewArticle}) {
+function BlogCard({ id, articleList, title = "Default Title", text = "Lorem", image = "https://placehold.co/600x400", deleteFunction, setStateArticleList, newArticle, templateArticle, setNewArticle }) {
     const [isEdit, setIsEdit] = useState(false);
 
     const editFunction = () => {
@@ -13,7 +13,7 @@ function BlogCard({id, articleList, title = "Default Title", text = "Lorem", ima
                 title,
                 text,
                 image
-                
+
             }
         )
     }
@@ -44,7 +44,7 @@ function BlogCard({id, articleList, title = "Default Title", text = "Lorem", ima
         setStateArticleList(newArticleList);
         setNewArticle(templateArticle);
         setIsEdit(false);
-        
+
     }
 
     return (
@@ -65,7 +65,7 @@ function BlogCard({id, articleList, title = "Default Title", text = "Lorem", ima
                     isEdit && (
                         <Card.Body className="d-flex flex-column justify-content-between">
                             <form className="form-control d-flex flex-column gap-3" onSubmit={submitEditHandler}>
-                                <input onChange={changeHandler} type="text" name="title" value={newArticle.title} className="form-control"/>
+                                <input onChange={changeHandler} type="text" name="title" value={newArticle.title} className="form-control" />
                                 <textarea onChange={changeHandler} name="text" value={newArticle.text} className="flex-grow-1 my-card-text form-control" >
                                     {newArticle.text}
                                 </textarea>

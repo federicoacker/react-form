@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function AddArticleForm({ articleList, setStateArticleList, newArticle, templateArticle, setNewArticle }) {
-    
+
     const [inputKey, setInputKey] = useState(-1);
 
     const resetInput = () => {
@@ -19,7 +19,7 @@ function AddArticleForm({ articleList, setStateArticleList, newArticle, template
                 submitValue = URL.createObjectURL(filesArray[0]);
             }
         }
-        
+
         const modifiedArticle = {
             ...newArticle,
             id: crypto.randomUUID(),
@@ -34,7 +34,7 @@ function AddArticleForm({ articleList, setStateArticleList, newArticle, template
     const submitHandler = (event) => {
         event.preventDefault();
         let newArticleList;
-        if (!newArticle.image){
+        if (!newArticle.image) {
             newArticleList = [
                 ...articleList,
                 {
@@ -55,17 +55,17 @@ function AddArticleForm({ articleList, setStateArticleList, newArticle, template
     }
 
     return (
-            <form className="form-control d-flex flex-column gap-2 py-3" onSubmit={submitHandler}>
-                <h2 className="form-title">Aggiungi un nuovo Articolo!</h2>
-                <label htmlFor="title">Titolo dell'Articolo</label>
-                <input className="form-control" type="text" onChange={changeHandler} value={newArticle.title} name="title" required />
-                <label htmlFor="text">Testo dell'Articolo</label>
-                <textarea className="form-control" onChange={changeHandler} value={newArticle.text} name="text" required />
-                <label htmlFor="image">Immagine associata (opzionale)</label>
-                <input key={inputKey} className="form-control" type="file" onChange={changeHandler} name="image" />
-                <button className="btn btn-primary" type="submit">Crea nuovo articolo!</button>
-                <img className="img-fluid" src={newArticle.image} />
-            </form>
+        <form className="form-control d-flex flex-column gap-2 py-3" onSubmit={submitHandler}>
+            <h2 className="form-title">Aggiungi un nuovo Articolo!</h2>
+            <label htmlFor="title">Titolo dell'Articolo</label>
+            <input className="form-control" type="text" onChange={changeHandler} value={newArticle.title} name="title" required />
+            <label htmlFor="text">Testo dell'Articolo</label>
+            <textarea className="form-control" onChange={changeHandler} value={newArticle.text} name="text" required />
+            <label htmlFor="image">Immagine associata (opzionale)</label>
+            <input key={inputKey} className="form-control" type="file" onChange={changeHandler} name="image" />
+            <button className="btn btn-primary" type="submit">Crea nuovo articolo!</button>
+            <img className="img-fluid" src={newArticle.image} />
+        </form>
     )
 }
 
