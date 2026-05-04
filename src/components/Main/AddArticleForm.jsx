@@ -32,6 +32,10 @@ function AddArticleForm({ articleList, setter }) {
 
     }
 
+    const submitHandler = (event) => {
+        event.preventDefault();
+    }
+
     return (
         <>
         
@@ -43,6 +47,7 @@ function AddArticleForm({ articleList, setter }) {
             <textarea className="form-control" onChange={changeHandler} value={newArticle.text} name="text" required/>
             <label for="image">Immagine associata (opzionale)</label>
             <input className="form-control" type="file" onChange={changeHandler} name="image"/>
+            <button className="btn btn-primary" type="submit">Crea nuovo articolo!</button>
             <img className="img-fluid" src={newArticle.image}/>
         </form>
         </>
