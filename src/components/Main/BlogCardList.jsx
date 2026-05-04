@@ -1,10 +1,11 @@
-import Col from "react-bootstrap/Col";
+import BlogCard from "./BlogCard"
 
-function BlogCardList() {
+
+function BlogCardList({articleList}) {
   return (
-    <Col xs={12} sm={12} md={12} lg={6} xl={4}>
-        
-    </Col>
+    <>
+        {articleList.map(article => <BlogCard key={ article.id } title={ article.title } text={ article.text } image={ article.image }/>)}
+    </>
   )
 }
 

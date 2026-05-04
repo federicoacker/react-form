@@ -8,7 +8,7 @@ function Main() {
     <main>
         <Container>
             <Row>
-                <BlogCardList list={articleList}/>
+                <BlogCardList articleList={articleList}/>
             </Row>
         </Container>
     </main>
