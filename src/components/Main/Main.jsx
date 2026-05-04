@@ -13,7 +13,7 @@ function Main() {
                 <Row className="g-3 align-items-stretch my-3">
                     <BlogCardList articleList={stateArticleList} setter={setStateArticleList}/>
                 </Row>
-                <AddArticleForm/>
+                <AddArticleForm articleList={stateArticleList} setter={setStateArticleList}/>
             </Container>
         </main>
     )

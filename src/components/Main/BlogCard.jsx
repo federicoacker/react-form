@@ -9,7 +9,7 @@ function BlogCard({title = "Default Title", text = "Lorem", image = "https://pla
                 <Card.Img className="blog-image" variant="top" src={image} />
                 <Card.Body className="d-flex flex-column justify-content-between">
                     <Card.Title>{title}</Card.Title>
-                    <Card.Text className="flex-grow-1">
+                    <Card.Text className="flex-grow-1 my-card-text">
                         {text}
                     </Card.Text>
                     <button className="btn btn-primary" onClick={click}>Delete</button>
