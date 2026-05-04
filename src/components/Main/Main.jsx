@@ -7,11 +7,12 @@ import { useState } from "react"
 function Main() {
     const [stateArticleList, setStateArticleList] = useState(articleList);
     return (
-        <main>
+        <main className="bg-dark-subtle">
             <Container className="py-5">
                 <Row className="g-3 align-items-stretch">
                     <BlogCardList articleList={stateArticleList} setter={setStateArticleList}/>
                 </Row>
+                
             </Container>
         </main>
     )
