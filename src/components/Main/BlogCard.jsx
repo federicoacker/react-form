@@ -2,7 +2,18 @@ import { useState } from "react";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 
-function BlogCard({ id, articleList, title = "Default Title", text = "Lorem", image = "https://placehold.co/600x400", deleteFunction, setStateArticleList, newArticle, templateArticle, setNewArticle }) {
+function BlogCard({ 
+    id, 
+    articleList, 
+    title = "Default Title", 
+    text = "Lorem", 
+    image = "https://placehold.co/600x400", 
+    deleteFunction, 
+    setStateArticleList, 
+    newArticle, 
+    templateArticle, 
+    setNewArticle 
+}) {
     const [isEdit, setIsEdit] = useState(false);
 
     const editFunction = () => {

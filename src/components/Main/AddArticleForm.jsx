@@ -1,6 +1,12 @@
 import { useState } from "react";
 
-function AddArticleForm({ articleList, setStateArticleList, newArticle, templateArticle, setNewArticle }) {
+function AddArticleForm({ 
+    articleList, 
+    setStateArticleList, 
+    newArticle, 
+    templateArticle, 
+    setNewArticle 
+}) {
 
     const [inputKey, setInputKey] = useState(-1);
 

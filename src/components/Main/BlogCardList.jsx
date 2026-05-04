@@ -1,7 +1,14 @@
 import BlogCard from "./BlogCard"
 
 
-function BlogCardList({ articleList, setStateArticleList, newArticle, setNewArticle, templateArticle }) {
+function BlogCardList({ 
+    articleList, 
+    setStateArticleList, 
+    newArticle, 
+    setNewArticle, 
+    templateArticle 
+}) {
+    
     return (
         <>
             {
