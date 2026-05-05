@@ -7,7 +7,7 @@ import AddArticleForm from "./AddArticleForm.jsx"
 
 const templateArticle =
 {
-    id: crypto.randomUUID(),
+    id: null,
     title: "",
     text: "",
     image: null
